@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha256-gvEnj2axkqIj4wbYhPjbWV7zttgpzBVEgHub9AAZQD4=" crossorigin="anonymous" />
+  <style>
+    .box{
+      width : 100px;
+      height : 100px;
+      background:tomato;
+      margin : 50px;
+      /* transition : 1000ms; */
+      transition : .4s;
+    }
+    .box:hover{
+      width : 300px;
+      background : dodgerblue;
+    }
+  </style>
+  <template>
+    transition-timing-function : 타이밍 함수(애니메이션 전환 효과를 계산하는 방법) 지정
+    
+    ease : 빠르게-느리게 / 기본값 : ease / cubic-bezier(.25, .1, .25, 1)
+    linear : 일정하게 / cubic-bezier(0, 0, 1, 1)
+    ease-in : 느리게 - 빠르게 / cubic-bezier(.42, 0, 1, 1)
+    ease-out : 빠르게 - 느리게 / cubic-bezier(0, 0, .58, 1)
+    ease-in-out : 느리게 - 빠르게 - 느리게 / cubic-bezier(.42, 0, .58, 1)
+    cubic-bezier(n,n,n,n) : 자신만의 값을 정의(0 ~ 1)
+    steps(n) : n번 분할된 애니메이션
+  </template>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
