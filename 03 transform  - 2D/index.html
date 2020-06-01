@@ -6,13 +6,65 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha256-gvEnj2axkqIj4wbYhPjbWV7zttgpzBVEgHub9AAZQD4=" crossorigin="anonymous" />
   <style>
+    .box{
+      width : 200px;
+      height : 200px;
+      background : tomato;
+      display : flex;
+      justify-content: center;
+      align-items: center;
+      font-size : 30px;
+      /* transform : rotate(90deg); */
+      /* transform : translate(100px,30px); */
 
+      /* position으로 가능은 하지만 부하 걸림 > 애니메이션 부적합 */
+      /* position : relative;
+      left : 0;
+      top : 0;
+      transition : 1s; */
+      /*  */
+
+      transition : 1s;
+
+      margin : 100px;
+    }
+    .box:hover{
+      /* position:relative;
+      left : 30px;
+      top : 30px; */
+      /* transform : translate(30px, 30px); */
+
+      /* transform : scale(.8); */
+      /* transform : skew(45deg); */
+      /* transform : skewX(45deg); */
+      /* transform : skewY(45deg); */
+      /* transform : skew(10deg, 5deg); */
+      /* transform : skew(20deg); */
+
+      transform : translate(50px, 50px) skew(20deg);
+    }
   </style>
   <template>
-  
+    transform 2D 변환 함수
+
+    translate(x, y) : 이동(X축, Y축) / 단위 : 단위
+    translateX(x) : 이동(X축) / 단위 : 단위
+    translateY(y) : 이동(Y축) / 단위 : 단위
+
+    이동하고 끝낼거면 position : relative로 하고,
+    이동하고도 계속 실시간으로 움직이는거면 translate 추천
+
+    scale(x, y) : 크기(X축, Y축) / 단위 : 없음(배수)
+    scaleX(x) : 크기(X축) / 단위 : 없음(배수)
+    scaleY(y) : 크기(Y축) / 단위 : 없음(배수)
+    rotate(degree) : 회전(각도) / 단위 : deg
+    skew(x-deg, y-deg) : 기울임(X축, Y축) / 단위 : deg
+    skewX(x-deg) : 기울임(X축) / 단위 : deg
+    skewY(y-deg) : 기울임(Y축) / 단위 : deg
+    matrix(n,n,n,n,n,n) : 2차원 변환 효과 / 단위 : 없음
   </template>
 </head>
 <body>
-
+  <div class="box">123</div>
 </body>
 </html>
