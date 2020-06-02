@@ -6,13 +6,57 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha256-gvEnj2axkqIj4wbYhPjbWV7zttgpzBVEgHub9AAZQD4=" crossorigin="anonymous" />
   <style>
-
+ .perspective{
+      width : 200px; /* 지켜보는 위치가 요소의 중앙이기떄문에 보려는 대상의 가로길이와 맞춰줘야됨 > 안맞춰주면 이 경우 div 속성때문에 뷰포트의 중앙됨 */
+      perspective : 500px;
+      /* perspective-origin : 50% 50%; 기본값 */
+      /* perspective-origin : 0 50%; */
+      /* perspective-origin : 0 0; */
+      /* perspective-origin : 100% 100%; */
+      perspective-origin : 100% 200%;
+      padding : 70px;
+    }
+    .grand-parent{
+      width : 200px;
+      border : 3px solid dodgerblue;
+      transition : 1s;
+      transform-style : preserve-3d;
+    }
+    .grand-parent:hover{
+      transform : rotateX(-45deg);
+    }
+    .parent{
+      width : 200px;
+      border : 3px solid tomato;
+      transition : 1s;
+      transform-style : preserve-3d;
+    }
+    .parent:hover{
+      transform : rotateY(45deg);
+    }
+    img{
+      width : 200px;
+      border : 3px solid lightgray;
+      transition : 1s;
+    }
+    img:hover{
+      transform : rotateX(45deg);
+    }
   </style>
   <template>
-  
+    perspective-origin : 원근 거리의 기준점을 설정
+
+    x축 : left, right, center, %, 단위 / 기본값 : 50%
+    y축 : top, bottom, center, %, 단위 / 기본값 : 50%
   </template>
 </head>
 <body>
-
+  <div class="perspective">
+    <div class="grand-parent">
+      <div class="parent">
+        <img src="https://heropy.blog/css/images/logo.png" alt="HEROPY">
+      </div>
+    </div>
+  </div>
 </body>
 </html>
